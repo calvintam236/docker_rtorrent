@@ -6,12 +6,12 @@ rTorrent is a BitTorrent server & client contributed by [rakshasa](https://githu
 
 ### Example usages
 
-Replace `ARCH` for your system architecture. Available option(s): `amd64`
+Replace `ARCH` for your system architecture. Available option(s): `x86_64`
 
 - To run the container in background:
 
 ```console
-$ docker run -v rtorrent:/rtorrent -d --name YOUR_CONTAINER_NAME -p YOUR_PORT:5000 calvintam236/rtorrent:ARCH -n -n 0.0.0.0 -p YOUR_PORT -d XXXXXXXXXXXXXX -s /rtorrent -o system.use_daemon.set = true
+$ docker run -it -v rtorrent:/rtorrent -d --name YOUR_CONTAINER_NAME -p YOUR_PORT-YOUR_PORT calvintam236/rtorrent:ARCH -n -d /rtorrent/torrents -s /rtorrent/sessions -p YOUR_PORT-YOUR_PORT -o system.daemon=true,encoding_list=UTF-8,scgi_port=localhost:5000
 ```
 
 - To get `rtorrent` options with:
